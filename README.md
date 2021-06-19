@@ -28,3 +28,12 @@ useCallback
 - alternative of React.memo for reference object
 - is a hook that allows us to store a function across component executions
 - it allows us to tell React that we wanna save a function and the function should not be recreated
+
+_Sometimes, you might think, why do we need dependency array on useCallback, as my function always the same logic accorss rerender cycles_
+
+- In Javascript, functions are closure which means when a function is defined. Javascript basically locks in all the variable that we are using in there.
+- As the component is rerender and reexecuted, the function inside the useCallback is not recreated under all the circumstances
+- all the stored Values is used not a new one when component is rerender
+- so we would need a array dependecies
+
+_Important to know Closure and Primitive Reference Value_
