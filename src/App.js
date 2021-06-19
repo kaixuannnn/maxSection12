@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import Button from './components/UI/Button/Button'
 
 import './App.css'
@@ -9,9 +9,12 @@ function App() {
 
   console.log('APP CHANGESSS')
 
-  const toggleParagraphHandler = () => {
+  //in this case, we would like to tell react that this callback function, will never change as it has no dependencies
+  // the object is always the same as the the app component rerenders
+  const toggleParagraphHandler = useCallback(() => {
     setIsShowParagraph((prevShowParagraph) => !prevShowParagraph)
-  }
+  }, [])
+
   return (
     <div className='app'>
       <h1>Hi there!</h1>

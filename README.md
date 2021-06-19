@@ -22,3 +22,9 @@ _Why we dont use it in all component_
 - memo is good as you can avoid unnecessart re-render cycles
 - Limitations :
   - it not works on reference objects like object, array and functions
+
+useCallback
+
+- alternative of React.memo for reference object
+- is a hook that allows us to store a function across component executions
+- it allows us to tell React that we wanna save a function and the function should not be recreated

@@ -15,5 +15,6 @@ const Button = (props) => {
     </button>
   )
 }
-
-export default Button
+// and this time the React.memo able to do its job as we ensure that all the props values
+// are never change
+export default React.memo(Button)
