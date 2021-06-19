@@ -37,3 +37,20 @@ _Sometimes, you might think, why do we need dependency array on useCallback, as 
 - so we would need a array dependecies
 
 _Important to know Closure and Primitive Reference Value_
+
+Dive in useState
+\*You might wonder why useState go back to it initial
+
+- React got special handle it and same as useReducer
+
+useMemo
+
+- React.memo use for whole component, while we can use useMemo on specific thing inside a compoenent
+- we can use useMemo when we do calculation in a component
+
+**For Example**
+** const sortedList = useMemo(()=>{
+return props.items.sort((a, b)=>a-b);
+},[props.items]); **
+At Parent Component
+\*\* const listItems = useMemo(()=> [5,3,1,10,9],[])
